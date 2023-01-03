@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+:root{
+    --very-dark-grey:#18171F;
+    --dark-grey: #24232C;
+    --grey:#817D92;
+    --almost-white: #E6E5EA;
+    --neon-green: #A4FFAF;
+    --yellow: #F8CD65;
+    --orange: #FB7C58;
+    --red: #F64A4A;
+    --heading-l: 3.2rem;
+    --heading-m: 2.4rem;
+    --body-m: 1.8rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'JetBrains Mono', monospace;
+    position: relative;
+    font-size: var(--body-m);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-dark-grey);
+    color: var(--almost-white)
+}
+.title{
+    color: var(--grey   );
+    font-size: var(--heading-m);
+    margin-bottom: 2rem;
+}
+.password-result,.password-config{
+    background-color: var(--dark-grey);
+    max-width: 540px;
+    min-width: 340px;
+    width: 70%;
+}
+#password{
+    font-size: var(--heading-l);
+}
+.password-result{
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    font-size: var(--body-m);
+    min-height: 90px;
+}
+
+.copy-password{
+    right: 8%;
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    font-weight: 500;
+    
+    color: var(--neon-green);
+}
+.copy-password__label{
+    text-transform: uppercase;
+}
+.hidden{
+    display: none;
+}
+.copy-icon {
+    width: 21px;
+    height: 24px;
+    background-color: var(--neon-green);
+    -webkit-mask: url("../assets/images/icon-copy.svg") no-repeat center;
+    mask: url("../assets/images/icon-copy.svg") no-repeat center;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -ms-transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.copy-icon:hover{
+    cursor: pointer;
+}
+.copy-icon:active{
+    background-color: var(--almost-white);
+}
+
+
+
+.password-config{
+    font-size: var(--body-m);
+}
+
+.password-config__item{
+    position: relative;
+    margin: 2.4rem 3.2rem;
+}
+.password-config__item:nth-child(1){
+    display: flex;
+    align-items: center;
+}
+.password-config__item label{
+    margin-left: 1.5rem;
+}
+.password-length__value{
+    position: absolute;
+    right: 0.5rem;
+    font-size: var(--heading-l);
+    color: var(--neon-green);
+}
+#password-length{
+    margin-left: 1rem;
+    width: 100%;
+    color: var(--neon-green);
+}
+
+#strength-value{
+    margin: 0 3.2rem;
+    height: 9.2rem;
+    max-height: 72px;
+    align-self: center;
+    width: 90%;
+    color: var(--grey);
+    background-color: var(--very-dark-grey);
+}
+
+.password-strength {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    align-items: center;
+}
+
+.strength-label{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    white-space: nowrap;
+    font-size: var(--heading-m);
+    color: var(--almost-white);
+    text-transform: uppercase;
+}
+#strength-bar{
+    display: flex;
+    gap: 8px;
+}
+.strength-bar__item{
+    border: 1px solid var(--almost-white);
+    width: 10px;
+    height: 28px;
+}
+
+.tw{
+    border: none;
+    background-color: var(--red);
+}
+.w{
+    border: none;
+    background-color: var(--orange);
+}
+.m{
+    border: none;
+    background-color: var(--yellow);
+}
+.s{
+    border: none;
+    background-color: var(--neon-green);
+}
+
+
+.generate-password__button{
+    font-family: inherit;
+    margin: 2.4rem 3.2rem;
+    width: 90%;
+    height: 4rem;
+    background-color: var(--neon-green);
+    border: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.2s all ease-in-out;
+    -webkit-transition: 0.2s all ease-in-out;
+    -moz-transition: 0.2s all ease-in-out;
+    -ms-transition: 0.2s all ease-in-out;
+    -o-transition: 0.2s all ease-in-out;
+}
+.generate-password__button:hover, .generate-password__button:focus{
+    cursor: pointer;
+}
+.generate-password__button:active{
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    background-color: var(--dark-grey);
+}
+.generate-password__button img{
+    margin-left: 2.4rem;
+    /* height: 0px; */
+}
+
+.text-blur{
+    color: var(--grey);
+}
+
+
+/* @media screen and (-webkit-min-device-pixel-ratio:0) { */
+    input[type='range'] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 0.5rem;
+      background-color: var(--very-dark-grey);
+}
+    input[type='range']::-webkit-slider-thumb,input[type='range']::-moz-range-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        background: var(--almost-white);
+        height: 1.6rem;
+        width: 1.6rem;
+        border-radius: 50%;
+        transition: all 0.5s ease-in-out;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+    }
+
+    input[type='range']:hover::-webkit-slider-thumb,  input[type='range']:active::-webkit-slider-thumb,
+    input[type='range']:hover::-moz-range-thumb,  input[type='range']:active::-moz-range-thumb{
+
+        background-color: var(--very-dark-grey);
+        border: 1px solid var(--neon-green);
+        cursor: grab;
+        
+    }
+     input[type='range']::-moz-range-progress{
+
+        background: var(--neon-green);
+    }
+
+/* } */
+
+/* Hide the browser's default checkbox */
+/* Custom checkbox */
+.custom-checkbox{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: var(--body-m);
+}
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--dark-grey);
+    border: 2px solid var(--almost-white);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .custom-checkbox:hover input ~ .checkmark {
+    background-color: var(--dark-grey);
+
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .custom-checkbox input:checked ~ .checkmark {
+    border:none;
+    background-color: #A4FFAF;
+  }
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .custom-checkbox .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 2px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  /* @media screen and (max-width: 768px){
+    html{
+        font-size: 50%;
+    }
+  } */
+  @media screen and (max-width: 450px){
+    html{
+        font-size: 42.5%;
+    }
+  }
+    

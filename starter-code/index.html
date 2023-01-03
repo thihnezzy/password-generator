@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">Password Generator</h1>
+
+    <div class="password-result">
+      <p class="password-result__text" id="password">P4$5W0rD!</p>
+
+      <div class="copy-password">
+        <label for="password" class="copy-password__label hidden">Copied</label>
+        <div class="copy-icon"></div>
+      </div>
+    </div>
+
+    <div class="password-config">
+      <div class="password-config__item">
+        <label for="password-length">Character Length</label>
+        <span class="password-length__value">16</span>
+      </div>
+      <div class="password-config__item">
+
+        <input type="range" name="password-length" id="password-length" min="0" max="20" value="16">
+      </div>
+      
+      <div class="password-config__item">
+        <label class="custom-checkbox" for="password-uppercase">Include Uppercase Letters
+          <input type="checkbox" name="password-uppercase" id="password-uppercase" value="1" checked>
+          <span class="checkmark"></span>
+        </label>
+        
+        <!-- <label for="password-uppercase">Include Uppercase Letters</label> -->
+        
+      </div>
+      <div class="password-config__item">
+        <label class="custom-checkbox" for="password-lowercase">Include Lowercase Letters
+        <input type="checkbox" name="password-lowercase" id="password-lowercase" value="2" checked>
+        <span class="checkmark"></span>
+        </label>
+        
+        <!-- <label for="password-lowercase">Include Lowercase Letters</label> -->
+        
+      </div>
+      <div class="password-config__item">
+        <label class="custom-checkbox" for="password-numbers">Include Numbers
+        <input type="checkbox" name="password-numbers" id="password-numbers" value="3" checked>
+        <span class="checkmark"></span>
+        </label>
+        
+        <!-- <label for="password-numbers">Include Numbers</label> -->
+        
+      </div>
+      <div class="password-config__item">
+        <label class="custom-checkbox" for="password-symbols">Include Symbols
+        <input type="checkbox" name="password-symbols" id="password-symbols" value="4">
+        <span class="checkmark"></span>
+        </label>
+        
+        <!-- <label for="password-symbols">Include Symbols</label> -->
+        
+      </div>
+      <div class="password-config__item password-strength" id="strength-value">
+        <div class="password-config__item--control strength-title">
+          <span>STRENGTH</span>
+        </div>
+        <div class="password-config__item--control strength-label">
+          <label for="strength-bar" class="strength-msg strength-msg-tw hidden">Too Weak!</label>
+          <label for="strength-bar" class="strength-msg strength-msg-w hidden">Weak</label>
+          <label for="strength-bar" class="strength-msg strength-msg-m hidden">Medium</label>
+          <label for="strength-bar" class="strength-msg strength-msg-s hidden">Strong</label>
+          <div id="strength-bar">
+            <div class="strength-bar__item"></div>
+            <div class="strength-bar__item"></div>
+            <div class="strength-bar__item"></div>
+            <div class="strength-bar__item"></div>
+          </div>
+        </div>
+      </div>
+      <button class="generate-password__button">Generate <img src="./assets/images/icon-arrow-right.svg" alt="arrow key"/></button>
+    </div>
+  </main>
+  
+
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
