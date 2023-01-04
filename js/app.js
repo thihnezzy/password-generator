@@ -2,10 +2,16 @@ const characterValue = document.querySelector('#password-length');
 const characterValueDisplay = document.querySelector('.password-length__value');
 const passwordResult = document.querySelector('#password');
 const defaultPassword = "P4$5W0rD!";
-characterValue.addEventListener('input', function() {
-    characterValueDisplay.textContent = characterValue.value;
-    passwordResult.textContent = "";
 
+characterValue.addEventListener('input', function(e) {
+    characterValueDisplay.textContent = characterValue.value;
+
+    let target = e.target;
+    const min = target.min;
+    const max = target.max;
+    const val = target.value;
+
+    target.style.backgroundSize = (val - min) * 100 / (max -min) + '% 100%'
     if (parseInt(characterValue.value) === 0){
         passwordResult.classList.add('text-blur')
     }else{
@@ -65,6 +71,9 @@ function checkPasswordStrength(password) {
     }
     if(password.length <= 4){
         strength -= 3;
+    }
+    if (password.length <= 8){
+        strength -= 2;
     }
     // Return the strength
     return strength;

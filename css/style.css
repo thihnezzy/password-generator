@@ -214,17 +214,47 @@ body{
 /* @media screen and (-webkit-min-device-pixel-ratio:0) { */
     input[type='range'] {
       -webkit-appearance: none;
-      appearance: none;
+      /* appearance: none; */
       height: 0.5rem;
-      background-color: var(--very-dark-grey);
-}
-    input[type='range']::-webkit-slider-thumb,input[type='range']::-moz-range-thumb{
+      width: 100%;
+      background: var(--very-dark-grey);
+      /* background-image: var(--neon-green); */
+      background-image: linear-gradient(var(--neon-green), var(--neon-green));
+      background-size: 80% 100%;
+      background-repeat: no-repeat;
+    }
+    input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
-        appearance: none;
+        height: 1.6rem;
+        width: 1.6rem;
+        border-radius: 50%;
+        background: var(--almost-white);
+        cursor: ew-resize;
+}
+      input[type="range"]:hover::-webkit-slider-thumb,input[type="range"]:active::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: var(--very-dark-grey);
+        border: 1px solid var(--neon-green);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
+
+    input[type="range"]::-webkit-slider-runnable-track{
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+
+    /* Firefox */
+    input[type='range']::-moz-range-thumb{
         background: var(--almost-white);
         height: 1.6rem;
         width: 1.6rem;
         border-radius: 50%;
+        border: none;
         transition: all 0.5s ease-in-out;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
@@ -235,8 +265,6 @@ body{
         -ms-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
     }
-
-    input[type='range']:hover::-webkit-slider-thumb,  input[type='range']:active::-webkit-slider-thumb,
     input[type='range']:hover::-moz-range-thumb,  input[type='range']:active::-moz-range-thumb{
 
         background-color: var(--very-dark-grey);
